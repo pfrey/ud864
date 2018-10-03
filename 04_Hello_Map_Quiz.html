@@ -114,11 +114,11 @@ API Course, Lesson 1 -->
         });
       }
     }
-
+    
     function showListings() {
       var bounds = new google.maps.LatLngBounds();
 
-      for (var i = 0; i < markers.lenth; i++) {
+      for (var i = 0; i < markers.length; i++) {
         markers[i].setMap(map);
         bounds.extend(markers[i].position);
       }
