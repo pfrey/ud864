@@ -21,20 +21,25 @@ API Course, Lesson 1 -->
        });
        // Create a single latLng literal object.
        var singleLatLng = {lat: 40.74135, lng: -73.99802};
-       // TODO: Create a single marker appearing on initialize -
-       // Create it with the position of the singleLatLng,
-       // on the map, and give it your own title!
 
-       // TODO: create a single infowindow, with your own content.
-       // It must appear on the marker
+       var singleMarker = new google.maps.Marker({
+        position: singleLatLng,
+        map: map,
+        title: 'Single Marker'
+       });
 
-       // TODO: create an EVENT LISTENER so that the infowindow opens when
-       // the marker is clicked!
+       var infoWindow = new google.maps.InfoWindow({
+        content: "Hello"
+       });
+
+       singleMarker.addListener('click', function() {
+        infoWindow.open(map, singleMarker);
+       });
      }
    </script>
    <!--TODO: Insert your API Key in the below call to load the API.-->
    <script async defer
-     src="https://maps.googleapis.com/maps/api/js?v=3&key=XXX&callback=initMap">
+     src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBNiVrOQqLRb6SuJgjBRM_bQV2hYAs-hRw&callback=initMap">
    </script>
  </body>
 </html>
